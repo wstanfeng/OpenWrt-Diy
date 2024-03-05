@@ -29,7 +29,7 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-git clone --depth 1 src-git nezha https://github.com/Erope/openwrt_nezha package/luci-app-nezha-go
+git clone --depth 1 https://github.com/Erope/openwrt_nezha package/luci-app-nezha-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/deng/luci-app-ddns-go
 git clone --depth 1 https://github.com/messense/aliyundrive-webdav deng-tmp2 && mv deng-tmp2/openwrt package/deng/aliyundrive-webdav
 
