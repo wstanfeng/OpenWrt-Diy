@@ -18,6 +18,7 @@ rm -rf feeds/luci/themes/luci-theme-netgear
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
+rm -rf feeds/packages/multimedia/aliyundrive-webdav
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -29,9 +30,17 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-git clone --depth 1 https://github.com/Erope/openwrt_nezha package/luci-app-nezha-go
+# luci-app-nezha 哪吒监控
+svn co https://github.com/Erope/openwrt_nezha/tree/main/luci-app-nezha package/luci-app-nezha
+svn co https://github.com/Erope/openwrt_nezha/tree/main/openwrt-nezha package/openwrt-nezha
+
+# aliyundrive-webdav
+svn co https://github.com/messense/aliyundrive-webdav/tree/main/openwrt/aliyundrive-webdav package/aliyundrive-webdav
+svn co https://github.com/messense/aliyundrive-webdav/tree/main/openwrt/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
+
+# ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/deng/luci-app-ddns-go
-git clone --depth 1 https://github.com/messense/aliyundrive-webdav deng-tmp2 && mv deng-tmp2/openwrt package/deng/aliyundrive-webdav
+
 
 # 添加额外插件
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
