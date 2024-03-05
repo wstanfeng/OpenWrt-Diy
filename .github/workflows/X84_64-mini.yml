@@ -103,7 +103,7 @@ jobs:
         cd openwrt/package 
         git clone https://github.com/messense/aliyundrive-webdav.git
 
-    - name: nezha-a
+    - name: nezha
       run: |
         cd openwrt/package 
         git clone https://github.com/Erope/openwrt_nezha.git
