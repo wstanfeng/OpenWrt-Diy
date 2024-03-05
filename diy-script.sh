@@ -30,14 +30,6 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-# luci-app-nezha 哪吒监控
-svn co https://github.com/Erope/openwrt_nezha/tree/main/luci-app-nezha package/luci-app-nezha
-svn co https://github.com/Erope/openwrt_nezha/tree/main/openwrt-nezha package/openwrt-nezha
-
-# aliyundrive-webdav
-svn co https://github.com/messense/aliyundrive-webdav/tree/main/openwrt/aliyundrive-webdav package/aliyundrive-webdav
-svn co https://github.com/messense/aliyundrive-webdav/tree/main/openwrt/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
-
 # ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/deng/luci-app-ddns-go
 
