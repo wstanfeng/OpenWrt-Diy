@@ -29,6 +29,12 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
+
+git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
+git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
+git clone --depth=1 https://github.com/Erope/openwrt_nezha package/luci-app-nezha-agent
+git clone --depth=1 https://github.com/messense/aliyundrive-webdav package/luci-app-aliyundrive-webdav
+
 # 添加额外插件
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
