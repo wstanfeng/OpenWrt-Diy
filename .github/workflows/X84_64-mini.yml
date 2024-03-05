@@ -98,6 +98,16 @@ jobs:
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
 
+    - name: aliyundrive-webdav
+      run: |
+        cd openwrt/package 
+        git clone https://github.com/messense/aliyundrive-webdav.git
+
+    - name: nezha-a
+      run: |
+        cd openwrt/package 
+        git clone https://github.com/Erope/openwrt_nezha.git
+
     - name: Install Feeds
       run: |
         cd $OPENWRT_PATH
