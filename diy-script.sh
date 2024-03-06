@@ -21,7 +21,7 @@ rm -rf feeds/luci/applications/luci-app-serverchan
 rm -rf feeds/packages/multimedia/aliyundrive-webdav
 
 # 移除 openwrt feeds 自带的核心包
-# rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 
 # 更新go
 # rm -rf feeds/packages/lang/golang
