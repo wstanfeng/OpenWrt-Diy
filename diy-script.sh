@@ -19,8 +19,6 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
 rm -rf feeds/packages/multimedia/aliyundrive-webdav
-
-# 移除 openwrt feeds 自带的核心包
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 
 # 更新go
@@ -38,23 +36,40 @@ function git_sparse_clone() {
 }
 
 # ddns-go
-git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/deng/luci-app-ddns-go
+git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 
+# aliyundrive-webdav
+git clone --depth 1 -b main https://github.com/messense/aliyundrive-webdav package/aliyundrive-webdav
 
-# 添加额外插件
+# nezha
+git clone --depth 1 https://github.com/Erope/openwrt_nezha package/nezha
+
+# adguardhome
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+
+# 微信/Telegram 推送的插件
 git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
+
+# AD
 git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app-ikoolproxy
+
+# 关机
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
+
+# 家长控制
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+
+# 系统监控工具
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
+
+# web文件管理 ShadowsocksR 多用户服务器 
 git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebrowser luci-app-ssr-mudb-server
 git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/luci-app-eqos
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 
 # 科学上网插件
-git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+git clone --depth=1 -b main https://github.com/fw876/helloworld package/small
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
