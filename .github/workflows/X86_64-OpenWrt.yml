@@ -2,8 +2,8 @@ name: X86_64 OpenWrt
 
 on:
   workflow_dispatch:
-  #schedule:
-    #- cron: 0 19 * * *
+  schedule:
+    - cron: 0 19 * * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -50,7 +50,6 @@ jobs:
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get -y clean
         sudo timedatectl set-timezone "$TZ"
-        sudo -E apt install clang
 
     - name: Combine Disks
       uses: easimon/maximize-build-space@master
@@ -66,7 +65,6 @@ jobs:
       run: |
         df -hT $GITHUB_WORKSPACE
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        sed -i 's/iperf3-ssl[[:space:]]*//g' openwrt/target/linux/x86/Makefile
         cd openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         COMMIT_AUTHOR=$(git show -s --date=short --format="作者: %an")
@@ -97,6 +95,16 @@ jobs:
         ccache: false
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
+
+    - name: aliyundrive-webdav
+      run: |
+        cd openwrt/package 
+        git clone https://github.com/messense/aliyundrive-webdav.git
+
+    - name: nezha
+      run: |
+        cd openwrt/package 
+        git clone https://github.com/Erope/openwrt_nezha.git
 
     - name: Install Feeds
       run: |
