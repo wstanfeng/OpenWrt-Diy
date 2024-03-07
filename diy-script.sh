@@ -9,17 +9,6 @@
 # TTYD 免登录
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
-# 移除要替换的包
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/packages/net/msd_lite
-rm -rf feeds/packages/net/smartdns
-rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/themes/luci-theme-netgear
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/luci/applications/luci-app-netdata
-rm -rf feeds/luci/applications/luci-app-serverchan
-rm -rf feeds/packages/multimedia/aliyundrive-webdav
-
 # 更新go
 # rm -rf feeds/packages/lang/golang
 # git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
@@ -119,6 +108,18 @@ git_sparse_clone main https://github.com/haiibo/packages luci-app-onliner
 sed -i '$i uci set nlbwmon.@nlbwmon[0].refresh_interval=2s' package/lean/default-settings/files/zzz-default-settings
 sed -i '$i uci commit nlbwmon' package/lean/default-settings/files/zzz-default-settings
 chmod 755 package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
+
+# 移除要替换的包
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/net/msd_lite
+rm -rf feeds/packages/net/smartdns
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-netgear
+rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/luci/applications/luci-app-netdata
+rm -rf feeds/luci/applications/luci-app-serverchan
+rm -rf feeds/packages/multimedia/aliyundrive-webdav
+rm -rf package/small/{xray-core,xray-plugin,v2ray-core,v2ray-plugin}
 
 # x86 型号只显示 CPU 型号
 sed -i 's/${g}.*/${a}${b}${c}${d}${e}${f}${hydrid}/g' package/lean/autocore/files/x86/autocore
