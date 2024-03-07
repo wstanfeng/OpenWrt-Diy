@@ -19,7 +19,6 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
 rm -rf feeds/packages/multimedia/aliyundrive-webdav
-rm -rf feeds/packages/net/{xray-core,v2ray-core}
 
 # 更新go
 # rm -rf feeds/packages/lang/golang
