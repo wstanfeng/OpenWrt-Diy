@@ -43,6 +43,9 @@ git clone --depth 1 -b main https://github.com/messense/aliyundrive-webdav packa
 # nezha
 git clone --depth 1 https://github.com/Erope/openwrt_nezha package/nezha
 
+#简易更新
+git_sparse_clone main https://github.com/sundaqiang/openwrt-packages-backup  luci/applications/luci-app-easyupdate
+
 # adguardhome
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 
