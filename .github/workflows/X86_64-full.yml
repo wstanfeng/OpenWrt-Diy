@@ -3,7 +3,7 @@ name: X86_64-full OpenWrt
 on:
   workflow_dispatch:
   schedule:
-    - cron: 6 19 * * *
+    - cron: 3 10 * * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -97,16 +97,6 @@ jobs:
         ccache: false
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
-
-    - name: aliyundrive-webdav
-      run: |
-        cd openwrt/package 
-        git clone https://github.com/messense/aliyundrive-webdav.git
-        
-    - name: nezha
-      run: |
-        cd openwrt/package 
-        git clone https://github.com/Erope/openwrt_nezha.git
         
     - name: Install Feeds
       run: |
