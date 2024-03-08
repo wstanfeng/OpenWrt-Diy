@@ -10,7 +10,7 @@
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 # 修改主机信息
-echo -n "$(date +'%Y%m%d%H%M%S')" > package/base-files/files/etc/openwrt_version
+echo -n "$(date +"%Y%m%d%H%M%S")" > package/base-files/files/etc/openwrt_version
 
 # 更新go
 # rm -rf feeds/packages/lang/golang
