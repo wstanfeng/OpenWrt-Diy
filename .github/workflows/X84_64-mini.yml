@@ -3,7 +3,7 @@ name: X86_64-mini OpenWrt
 on:
   workflow_dispatch:
   schedule:
-    - cron: 11 30 * * *
+    - cron: 30 11 * * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
