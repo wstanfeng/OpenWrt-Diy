@@ -9,6 +9,9 @@
 # TTYD 免登录
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
+# 修改主机信息
+echo -n "$(date +'%Y%m%d%H%M%S')" > package/base-files/files/etc/openwrt_version
+
 # 更新go
 # rm -rf feeds/packages/lang/golang
 # git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
