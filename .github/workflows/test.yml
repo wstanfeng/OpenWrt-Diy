@@ -156,7 +156,7 @@ jobs:
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
         tar -zcf Packages.tar.gz packages
         echo -n "${{ env.DATE }}" > version.txt
-        echo -n "- ${{ env.COMMIT_AUTHOR }}$'\n'- ${{ env.COMMIT_DATE }}$'\n'- ${{ env.COMMIT_MESSAGE }}$'\n'- ${{ env.COMMIT_HASH }}" > release.txt
+        echo -e "- 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}\n- 固件源码: ${{ env.REPO_URL }}\n- 源码分支: ${{ env.REPO_BRANCH }}\n- 内核版本: ${{ env.KERNEL }}" > release.txt
         rm -rf packages feeds.buildinfo version.buildinfo
         echo "KERNEL=$(cat *.manifest | grep ^kernel | cut -d- -f2 | tr -d ' ')" >> $GITHUB_ENV
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
