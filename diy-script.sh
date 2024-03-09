@@ -27,7 +27,10 @@ function git_sparse_clone() {
 }
 
 # 在线更新
-git clone --depth 1 https://github.com/wstanfeng/luci-app-gpsysupgrade package/luci-app-gpsysupgrade 
+git clone --depth 1 https://github.com/wstanfeng/luci-app-gpsysupgrade package/luci-app-gpsysupgrade
+
+#简易更新
+#git_sparse_clone main https://github.com/sundaqiang/openwrt-packages-backup  luci/applications/luci-app-easyupdate
 
 # ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
