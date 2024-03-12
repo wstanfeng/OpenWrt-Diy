@@ -26,9 +26,6 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-# homebox内网测速
-git clone --depth 1 https://github.com/selfcan/luci-app-homebox package/luci-app-homebox
-
 # 在线更新
 git clone --depth 1 https://github.com/wstanfeng/luci-app-gpsysupgrade package/luci-app-gpsysupgrade
 
