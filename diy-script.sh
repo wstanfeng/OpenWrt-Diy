@@ -125,7 +125,7 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
 rm -rf feeds/packages/multimedia/aliyundrive-webdav
-rm -rf package/small/{xray-core,xray-plugin,v2ray-core,v2ray-plugin,chinadns-ng}
+## rm -rf package/small/{xray-core,xray-plugin,v2ray-core,v2ray-plugin,chinadns-ng}
 
 # x86 型号只显示 CPU 型号
 sed -i 's/${g}.*/${a}${b}${c}${d}${e}${f}${hydrid}/g' package/lean/autocore/files/x86/autocore
