@@ -6,15 +6,15 @@ on:
     - cron: 30 16 * * *
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
-  CONFIG_FILE: configs/x86_64-mini.config
+  CONFIG_FILE: configs/x86_64-owt.config
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: X86_64_MINI
+  FIRMWARE_TAG: X86_64_OWT
   TZ: Asia/Shanghai
 
 jobs:
