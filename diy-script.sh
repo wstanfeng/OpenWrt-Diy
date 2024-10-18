@@ -30,7 +30,7 @@ function git_sparse_clone() {
 }
 
 # 在线更新
-git clone --depth 1 https://github.com/wstanfeng/luci-app-gpsysupgrade package/luci-app-gpsysupgrade
+git clone --depth 1 -b LEDE https://github.com/wstanfeng/luci-app-gpsysupgrade package/luci-app-gpsysupgrade
 
 # ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
