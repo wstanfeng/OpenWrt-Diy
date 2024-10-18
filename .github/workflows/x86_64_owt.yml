@@ -6,8 +6,8 @@ on:
     - cron: 30 16 * * *
 
 env:
-  REPO_URL: https://github.com/VIKINGYFY/immortalwrt
-  REPO_BRANCH: owrt
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: master
   CONFIG_FILE: configs/x86_64-owt.config
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: amd64
